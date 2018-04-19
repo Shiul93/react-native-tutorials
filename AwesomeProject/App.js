@@ -8,13 +8,18 @@ import FixedDimensionsBasics from './src/FixedDimensionsBasics';
 import FlexDimensionsBasics from './src/FlexDimensionsBasics';
 import FlexDirectionBasics from './src/FlexDirectionBasics';
 import JustifyContentsBasics from './src/JustifyContentsBasics';
-
+import AlignItemBasics from './src/AlignItemBasics';
+import PizzaTranslator from './src/PizzaTranslator';
+import ButtonBasics from './src/ButtonBasics';
+import IScrolledDownAndWhatHappenedNextShockedMe from './src/ScrollViewTest';
+import FlatListBasics from './src/FlatListBasics';
+import SectionListBasics from './src/SectionListBasics';
+import FetchExample from './src/FetchExample';
 export default class HelloWorldApp extends Component {
   render() {
-    return (
-      
-        
-        <JustifyContentsBasics></JustifyContentsBasics>
+    return ( 
+       
+        <FetchExample></FetchExample>
       
     );
   }
