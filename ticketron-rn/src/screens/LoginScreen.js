@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import {Colors} from '../values/colors.js';
+import {Fonts} from '../values/fonts.js';
+import {Sizes} from '../values/sizes.js';
+
+import { StyleSheet, Text, View, Button, Platform } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import LabelButton from '../components/LabelButton'
+
 
 export default class LoginScreen extends Component {
 
   onPressLoginButton(){
-    alert('AYYY')
+    alert('AYYY');
+  }
+
+  onPressSignUpButton(){
+    alert('LMAO');
   }
   render() {
     return (
@@ -16,7 +25,9 @@ export default class LoginScreen extends Component {
           <TextInput style={styles.textInput}
             underlineColorAndroid='rgba(0,0,0,0)'
             placeholder=""
-            onChangeText={(text) => this.setState({text})}/>
+            onChangeText={(text) => this.setState({text})}
+            textAlign={'center'}
+          />
         </View>
 
         <Text style={styles.loginText}> PASSWORD </Text>
@@ -24,7 +35,10 @@ export default class LoginScreen extends Component {
           <TextInput style={styles.textInput}
             underlineColorAndroid='rgba(0,0,0,0)'
             placeholder=""
-            onChangeText={(text) => this.setState({text})}/>
+            onChangeText={(text) => this.setState({text})}
+            secureTextEntry = {true}
+            textAlign={'center'}
+          />    
         </View>
 
         <View style={styles.buttonContainer}>
@@ -33,8 +47,11 @@ export default class LoginScreen extends Component {
             title="LOGIN"
             onPress={this.onPressLoginButton}
           />
-          <LabelButton text={'Sign Up'}/>
         </View>
+        <View style={styles.buttonContainer}>
+          <LabelButton textStyle={styles.buttonColor} text={'Sign Up'} onPress={this.onPressSignUpButton}/>
+        </View>
+        
       </View>
     );
   }
@@ -46,13 +63,13 @@ const styles = StyleSheet.create({
     loginScreen: {
       
       flex: 3,
-      backgroundColor: '#fff',
+      backgroundColor: Colors.background,
       justifyContent: 'center',
       alignItems: 'center',
   
     },
     loginText:{
-      fontFamily: 'sans-serif-thin', 
+      fontFamily: Platform.OS === 'ios' ? Fonts.iOsThin : Fonts.androidThin, 
       fontSize: 20,
 
     },
@@ -60,7 +77,8 @@ const styles = StyleSheet.create({
     textInputContainer:{
       margin:15,
       width:150,
-      backgroundColor: 'whitesmoke',
+      height:30,
+      backgroundColor: Colors.textInput,
       borderRadius: 15,
       justifyContent: 'center',
     },
@@ -71,13 +89,15 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     buttonContainer: {
-      margin: 20,
+      margin: 10,
       width: 100,
       justifyContent: 'center',
       alignItems: 'center',
     },
     buttonColor:{
-      color: '#841584',
+      color: Colors.maincolor,
+      fontFamily: Platform.OS === 'ios' ? Fonts.iOsThin : Fonts.androidThin,  
+      fontSize: 15,
     }
     
   });

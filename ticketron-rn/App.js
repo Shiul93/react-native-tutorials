@@ -1,11 +1,17 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import  LoginScreen  from './src/screens/LoginScreen'
+import {Colors} from './src/values/colors';
+//import {Sizes} from './src/values/sizes';
+import {Fonts} from './src/values/fonts';
+
+import { StatusBar, StyleSheet, Text, View, Platform } from 'react-native';
+import  LoginScreen  from './src/screens/LoginScreen';
+import  TicketScreen  from './src/screens/TicketScreen';
 
 export default class App extends React.Component {
-
+  
 
   render() {
+    
     return (
       <View style={styles.container}>
 
@@ -15,8 +21,8 @@ export default class App extends React.Component {
             <Text style={styles.whiteTitle}>Ticketron RN</Text>
         </View>
       
-        <LoginScreen>
-        </LoginScreen>
+        <LoginScreen/>
+        
       </View>
     );
   }
@@ -26,17 +32,17 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.backgroundColor,
   },
   header: {
     height: 50,
-    backgroundColor: 'skyblue',
+    backgroundColor: Colors.maincolor,
     justifyContent: 'center',
   },
   whiteTitle: {
-    color: 'white',
+    color: Colors.background,
     marginLeft: 15,
-    fontFamily: 'sans-serif-thin', 
+    fontFamily: Platform.OS === 'ios' ? Fonts.iOsThin : Fonts.androidThin, 
     fontSize: 20,
 
   }

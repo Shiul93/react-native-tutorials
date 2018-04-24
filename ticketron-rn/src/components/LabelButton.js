@@ -6,12 +6,18 @@ export default class LabelButton extends React.Component {
         super(props);
         this.state = { count: 0 };
         this.text = props.text;
+        this.buttonCallback = props.onPress;
+        this.textStyle = props.textStyle;
       }
     
      
     render(){
     return( 
-        <Text> {this.text} </Text> 
+        <View>
+            <TouchableOpacity onPress = {this.buttonCallback}>
+                <Text style={this.textStyle}> {this.text} </Text> 
+            </TouchableOpacity>
+        </View>
     )
     }
 }
