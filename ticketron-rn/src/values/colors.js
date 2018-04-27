@@ -1,7 +1,8 @@
 export const Colors ={
     maincolor:'skyblue',
-    maindolordark:'steelblue',
+    maincolordark:'steelblue',
     maincolorlight:'powderblue',
     background:'white',
     textInput:'whitesmoke',
+    separator: 'whitesmoke',
 }

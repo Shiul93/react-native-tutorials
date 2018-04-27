@@ -24,7 +24,7 @@ export default class LoginScreen extends Component {
         <View style={styles.textInputContainer}>
           <TextInput style={styles.textInput}
             underlineColorAndroid='rgba(0,0,0,0)'
-            placeholder=""
+            placeholder=''
             onChangeText={(text) => this.setState({text})}
             textAlign={'center'}
           />
@@ -44,7 +44,7 @@ export default class LoginScreen extends Component {
         <View style={styles.buttonContainer}>
           <Button
             color = 'skyblue'
-            title="LOGIN"
+            title='LOGIN'
             onPress={this.onPressLoginButton}
           />
         </View>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   
     },
     loginText:{
-      fontFamily: Platform.OS === 'ios' ? Fonts.iOsThin : Fonts.androidThin, 
+      fontFamily: Fonts.thin, 
       fontSize: 20,
 
     },
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     },
     buttonColor:{
       color: Colors.maincolor,
-      fontFamily: Platform.OS === 'ios' ? Fonts.iOsThin : Fonts.androidThin,  
+      fontFamily: Fonts.thin,  
       fontSize: 15,
     }
     

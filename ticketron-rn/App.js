@@ -21,7 +21,7 @@ export default class App extends React.Component {
             <Text style={styles.whiteTitle}>Ticketron RN</Text>
         </View>
       
-        <LoginScreen/>
+        <TicketScreen/>
         
       </View>
     );
@@ -36,14 +36,15 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 50,
-    backgroundColor: Colors.maincolor,
+    backgroundColor: Colors.maincolordark,
     justifyContent: 'center',
   },
   whiteTitle: {
     color: Colors.background,
     marginLeft: 15,
-    fontFamily: Platform.OS === 'ios' ? Fonts.iOsThin : Fonts.androidThin, 
+    fontFamily:Fonts.thin, 
     fontSize: 20,
 
-  }
+  },
+  
 });
