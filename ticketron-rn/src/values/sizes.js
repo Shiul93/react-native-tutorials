@@ -3,4 +3,5 @@ export const Sizes = {
     textField:30,
     ticketHeight: 50,
     checkerSize: 30,
+    newTicketSize: 50,
 }

@@ -6,6 +6,8 @@ import {Fonts} from './src/values/fonts';
 import { StatusBar, StyleSheet, Text, View, Platform } from 'react-native';
 import  LoginScreen  from './src/screens/LoginScreen';
 import  TicketScreen  from './src/screens/TicketScreen';
+import ModalExample from './src/components/ModalExample';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default class App extends React.Component {
   
@@ -17,11 +19,13 @@ export default class App extends React.Component {
 
         <StatusBar hidden={true} />
 
-        <View style={styles.header}>
-            <Text style={styles.whiteTitle}>Ticketron RN</Text>
-        </View>
-      
-        <TicketScreen/>
+          <View style={styles.header}>
+              <Text style={styles.whiteTitle}>Ticketron RN</Text>
+          </View>
+        
+        <ScrollView>        
+          <TicketScreen/>
+        </ScrollView>
         
       </View>
     );
